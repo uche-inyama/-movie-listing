@@ -1,12 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovies } from '../../redux/movieSlice';
-
+import { getShows } from '../../redux/showsSlice';
 
 const GetMovies = () => {
   const dispatch = useDispatch();
-  useEffect(() => { dispatch(getMovies())},[dispatch]);
+  useEffect(() => { 
+    dispatch(getMovies())
+    dispatch(getShows())
+  },[dispatch]);
   const movies = useSelector((state) => state.movies);
+  const shows = useSelector(state => state.shows);
+
+  console.log(shows);
+
 
   if(movies.status === 'loading') {
     return (

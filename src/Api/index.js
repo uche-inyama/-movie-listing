@@ -8,3 +8,11 @@ export const fetchMovies = async () => {
     console.log(error); 
   }
 }
+
+export const fetchShows = async () => {
+  try {
+    return await axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=harry&type=series`)
+  } catch (error) {
+    console.log(error);
+  }
+}

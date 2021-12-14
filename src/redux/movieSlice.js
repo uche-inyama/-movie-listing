@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import axios from 'axios';
 import { fetchMovies } from '../Api'
 
 export const getMovies = createAsyncThunk(
