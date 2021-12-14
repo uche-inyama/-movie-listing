@@ -12,19 +12,25 @@ const GetMovies = () => {
   const movies = useSelector((state) => state.movies);
   const shows = useSelector(state => state.shows);
 
-  console.log(shows);
+  console.log(shows)
 
 
-  if(movies.status === 'loading') {
+  if(movies.status === 'loading' || shows.status === 'loading') {
     return (
       <div>loading...</div>
     )
-  } else if (movies.status === 'success'){
+  } else if (movies.status === 'success' && shows.status === 'success'){
     const { movies: { data } } = movies;
+    // const { shows: { data }} = shows;
     return (
-      <ul>
-        {data.Search.map(movie => <li>{movie.Title}</li> )}
-      </ul>
+      <>
+        <ul>
+          {data.Search.map(movie => <li>{movie.Title}</li> )}
+        </ul>
+        {/* <ul>
+          {data.Search.map(movie => <li>{movie.Title}</li> )}
+        </ul> */}
+      </>
     )
   } else {
     return (

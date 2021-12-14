@@ -11,7 +11,8 @@ export const fetchMovies = async () => {
 
 export const fetchShows = async () => {
   try {
-    return await axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=harry&type=series`)
+    const res =  await axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=harry&type=series`)
+    return res.data
   } catch (error) {
     console.log(error);
   }
