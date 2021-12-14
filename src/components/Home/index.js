@@ -7,7 +7,6 @@ const GetMovies = () => {
   const dispatch = useDispatch();
   useEffect(() => { dispatch(getMovies())},[dispatch]);
   const movies = useSelector((state) => state.movies);
-  console.log(movies)
 
   if(movies.status === 'loading') {
     return (
