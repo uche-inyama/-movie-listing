@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovies } from '../../redux/movieSlice';
 import { getShows } from '../../redux/showsSlice';
@@ -9,27 +10,36 @@ const GetMovies = () => {
     dispatch(getMovies())
     dispatch(getShows())
   },[dispatch]);
+
   const movies = useSelector((state) => state.movies);
-  const shows = useSelector(state => state.shows);
+  const series = useSelector(state => state.shows);
 
-  console.log(shows)
-
-
-  if(movies.status === 'loading' || shows.status === 'loading') {
+  if(movies.status === 'loading' || series.status === 'loading') {
     return (
       <div>loading...</div>
     )
-  } else if (movies.status === 'success' && shows.status === 'success'){
+  } else if (movies.status === 'success' && series.status === 'success'){
     const { movies: { data } } = movies;
-    // const { shows: { data }} = shows;
+    const { shows } = series;
+
     return (
       <>
-        <ul>
-          {data.Search.map(movie => <li>{movie.Title}</li> )}
-        </ul>
-        {/* <ul>
-          {data.Search.map(movie => <li>{movie.Title}</li> )}
-        </ul> */}
+        <div>
+          <h3>Movies</h3>
+          <ul>
+            {data.Search.map(movie => <li key={movie.imdbID}>
+              <Link to={`movies/${movie.imdbID}`}>{movie.Title}</Link>
+              </li> )}
+          </ul>
+        </div>
+        <div>
+          <h3>Series</h3>
+          <ul>
+            {shows.Search.map(show => <li key={show.imdbID}>
+              <Link to={`movies/${show.imdbID}`}>{show.Title}</Link>
+              </li> )}
+          </ul>
+        </div>
       </>
     )
   } else {
