@@ -20,7 +20,7 @@ export const fetchShows = async () => {
 
 export const fetchMovieDetail = async (imdbID) => {
   try {
-    const res =  await axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${imdbID}`)
+    const res =  await axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&i=${imdbID}&plot=full`)
     return res.data
   } catch (error) {
     console.log(error);

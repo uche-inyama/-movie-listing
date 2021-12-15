@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getMovies } from '../../redux/movieSlice';
 import { getShows } from '../../redux/showsSlice';
-import MovieCard from '../../components/MovieCard'
+import MovieCard from '../../components/MovieCard';
+import StyledList from './styledMovieList';
 
 const MovieList = () => {
 
@@ -24,24 +26,24 @@ const MovieList = () => {
     const { shows } = series;
 
     return (
-      <div className='movie-wrapper'>
+      <StyledList>
         <div className='movie-list'>
-          <h3>Movies</h3>
+          <h2>Movies</h2>
           <ul>
             <div className='movie-container'>
               {data.Search.map(movie => <MovieCard key={movie.imdbID} data={movie} /> )}
             </div>
           </ul>
         </div>
-        <div className='show-wrapper'>
-          <h3>Series</h3>
-          <ul className='show-list'>
+        <div className='show-list'>
+          <h2>Series</h2>
+          <ul>
             <div className='show-container'>
               {shows.Search.map(show => <MovieCard key={show.imdbID} data={show}/>)}
             </div>
           </ul>
         </div>
-      </div>
+      </StyledList>
     )
   } else {
     return (
