@@ -24,20 +24,24 @@ const MovieList = () => {
     const { shows } = series;
 
     return (
-      <>
-        <div>
+      <div className='movie-wrapper'>
+        <div className='movie-list'>
           <h3>Movies</h3>
           <ul>
-            {data.Search.map(movie => <MovieCard key={movie.imdbID} data={movie} /> )}
+            <div className='movie-container'>
+              {data.Search.map(movie => <MovieCard key={movie.imdbID} data={movie} /> )}
+            </div>
           </ul>
         </div>
-        <div>
+        <div className='show-wrapper'>
           <h3>Series</h3>
-          <ul>
-            {shows.Search.map(show => <MovieCard key={show.imdbID} data={show}/>)}
+          <ul className='show-list'>
+            <div className='show-container'>
+              {shows.Search.map(show => <MovieCard key={show.imdbID} data={show}/>)}
+            </div>
           </ul>
         </div>
-      </>
+      </div>
     )
   } else {
     return (
