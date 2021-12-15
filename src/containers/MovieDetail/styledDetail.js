@@ -22,6 +22,7 @@ const StyledDetail = styled.div`
     font-size: 40px;
     color: #000
   }
+  
   .movie-plot {
     margin-top: 20px;
     line-height: 1.8rem;
