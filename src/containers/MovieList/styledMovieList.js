@@ -20,7 +20,6 @@ const StyledList = styled.div`
   .slick-next {
     right: 10px;
   }
-
 `
 
 export default StyledList;

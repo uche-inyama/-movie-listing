@@ -10,9 +10,11 @@ import {settings} from '../../settings';
 const MovieList = () => {
 
   const dispatch = useDispatch();
+  const movieText = 'Harry';
+  const showText = 'Friends';
   useEffect(() => { 
-    dispatch(getMovies())
-    dispatch(getShows())
+    dispatch(getMovies(movieText));
+    dispatch(getShows(showText));
   },[dispatch]);
 
   const movies = useSelector((state) => state.movies);

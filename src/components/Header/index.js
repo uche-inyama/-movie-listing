@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import SearchFilter from '../../containers/SearchFilter';
 
-const index = () => {
+const Header = () => {
   return (
     <div>
       Header
+      <SearchFilter />
     </div>
   )
 }
 
-export default index
+export default Header;
