@@ -8,6 +8,9 @@ const StyledCard = styled.div`
     background: #1a242f;
     cursor: pointer;
     transition: all 0.3s;
+    min-height: 100%;
+    height: 100%;
+    margin: 10px;
 
     &:hover {
       transform: scale(1.04);

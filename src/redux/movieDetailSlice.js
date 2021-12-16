@@ -11,6 +11,11 @@ const MovieDetailSlice = createSlice({
     movie: {},
     status: null
   },
+  reducers: {
+    removeSelectedDetail: (state) => {
+      state.movie = {};
+    }
+  },
   extraReducers: {
     [getMovieDetail.pending]: (state, action) => {
       state.status = 'loading'
@@ -24,5 +29,7 @@ const MovieDetailSlice = createSlice({
     }
   }
 });
+
+export const { removeSelectedDetail } = MovieDetailSlice.actions;
 
 export default MovieDetailSlice.reducer

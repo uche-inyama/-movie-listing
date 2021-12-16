@@ -9,12 +9,18 @@ const StyledList = styled.div`
       font-weight: 400;
     }
   }
-  
-  .movie-container, .show-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 20px;
+  .list {
+    padding-left: 0;
   }
+
+  .slick-prev {
+    left: 10px;
+  }
+
+  .slick-next {
+    right: 10px;
+  }
+
 `
 
 export default StyledList;
