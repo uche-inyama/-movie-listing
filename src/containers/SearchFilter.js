@@ -13,13 +13,21 @@ const SearchFilter = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(term === '') return alert('Search field is empty!');
     dispatch(getMovies(term));
     dispatch(getShows(term));
+    setTerm("");
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={term} onChange={handleChange} placeholder="Search Movies or Shows" />
+      <input 
+        className="field"
+        type="text" 
+        value={term} 
+        onChange={handleChange} 
+        placeholder="Search Movies or Shows"
+      />
       <input type="submit"/>
     </form>
   )

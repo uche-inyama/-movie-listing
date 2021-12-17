@@ -8,7 +8,7 @@ const StyledDetail = styled.div`
       grid-template-columns: 3fr 1fr;
       grid-gap: 40px;
       padding: 40px 0px;
-      color: #000;
+      color: #fff;
       font-weight: 400;
     }
     
@@ -23,7 +23,7 @@ const StyledDetail = styled.div`
     }
     .movie-title {
       font-size: 40px;
-      color: #000
+      color: #fff
     }
     
     .movie-plot {
@@ -33,7 +33,7 @@ const StyledDetail = styled.div`
 
     .movie-info > div span:first-child {
       padding: 10px 0px;
-      color: #000;
+      color: #fff;
       font-weight: 600;
       width: 100px;
       display: inline-block;
