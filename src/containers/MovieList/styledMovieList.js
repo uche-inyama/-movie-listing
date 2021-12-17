@@ -3,11 +3,12 @@ import styled from "styled-components";
 const StyledList = styled.div`
   .movie-list, .show-list {
     margin: 20px 0px
-    h2 {
-      color: #79b8f3;
-      margin-bottom: 10px;
-      font-weight: 400;
-    }
+  }
+  .header {
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 400;
+    padding: 10px;
   }
   .list {
     padding-left: 0;

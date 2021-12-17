@@ -28,7 +28,7 @@ const SearchFilter = () => {
         onChange={handleChange} 
         placeholder="Search Movies or Shows"
       />
-      <input type="submit"/>
+      <button type="submit"><i className="fa fa-search"></i></button>
     </form>
   )
 };

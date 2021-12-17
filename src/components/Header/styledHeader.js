@@ -12,9 +12,16 @@ const StyledHeader = styled.div`
   }
 
   form {
+    display: flex;
+    height: 100%;
+    align-items: center;
     .field {
-      width: 78%;
-      height: 45%;
+      width: 60%;
+      height: 35%;
+    }
+    button {
+      width: 10%;
+      height: 42%;
     }
   }
   

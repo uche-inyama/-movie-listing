@@ -28,7 +28,7 @@ const MovieList = () => {
         <>
           <StyledList>
             <div className='movie-list'>
-              <h2>Movies</h2>
+              <h2 className="header">Movies</h2>
               <ul className="list">
                 <div className='movie-container'>
                   <Slider {...settings }>{data.Search.map(movie => <MovieCard key={movie.imdbID} data={movie} /> )} </Slider>
@@ -36,7 +36,7 @@ const MovieList = () => {
               </ul>
             </div>
             <div className='show-list'>
-              <h2>Series</h2>
+              <h2 className="header">Shows</h2>
               <ul className="list">
                 <div className='show-container'>
                   <Slider {...settings }>{shows.Search.map(show => <MovieCard key={show.imdbID} data={show}/>)} </Slider>
