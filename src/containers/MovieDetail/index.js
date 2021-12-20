@@ -15,7 +15,7 @@ const MovieDetail = () => {
   }, [dispatch, imdbID])
 
   const movieDetail = useSelector(state => state.movieDetail);
-  const { movie, status } = movieDetail
+  const { movie } = movieDetail
  
   return (
     <StyledDetail>

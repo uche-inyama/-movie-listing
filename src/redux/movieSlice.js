@@ -8,7 +8,7 @@ export const getMovies = createAsyncThunk(
 const moviesSlice = createSlice({
   name: 'movies',
   initialState: {
-    movies: [],
+    movies: {},
     status: null
   },
   extraReducers: {
@@ -19,7 +19,8 @@ const moviesSlice = createSlice({
       state.movies = payload
       state.status = 'success'
     },
-    [getMovies.rejected]: (state, action) => {
+    [getMovies.rejected]: (state, {payload}) => {
+      state.movies = payload
       state.status = 'failed'
     }
   }
