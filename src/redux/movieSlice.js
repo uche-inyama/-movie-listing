@@ -20,7 +20,6 @@ const moviesSlice = createSlice({
       state.status = 'success'
     },
     [getMovies.rejected]: (state, {payload}) => {
-      state.movies = payload
       state.status = 'failed'
     }
   }
