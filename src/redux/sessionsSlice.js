@@ -17,7 +17,6 @@ const SessionsSlice = createSlice({
       state.status = 'loading'
     },
     [userSignIn.fulfilled]: (state, { payload }) => {
-      console.log('signing in...')
       localStorage.setItem('token', payload.token)
       state.session = payload
       state.isAuthenticated = true

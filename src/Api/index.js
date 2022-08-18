@@ -16,25 +16,21 @@ export const fetchMovieDetail = async (imdbID) => {
 }
 
 export const RegisterUser = async (formData) => {
+  console.log('Registering a user ...')
   const config = {
     method: 'POST',
-    url: 'http://localhost:3000/users',
-    headers: {
-      'content-type': 'application/json'
-    },
+    url: 'https://pure-retreat-18240.herokuapp.com/users',
     data: formData
   }
   const res = await axios(config)
+  console.log(res)
   return res.data
 }
 
 export const loginUser = async (formData) => {
   const config = {
     method: 'POST',
-    url: 'http://localhost:3000/users/sign_in',
-    headers: {
-      'content-type': 'application/json'
-    },
+    url: 'https://pure-retreat-18240.herokuapp.com/users/sign_in',
     data: formData
   }
   const res = await axios(config)
@@ -45,7 +41,7 @@ export const signOut = async () => {
   console.log('logging out...')
   const config = {
     method: 'DELETE', 
-    url: 'http://localhost:3000/users/sign_out',
+    url: 'https://pure-retreat-18240.herokuapp.com/users/sign_out',
   }
   await axios(config)
 }

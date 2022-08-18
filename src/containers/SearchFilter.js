@@ -22,7 +22,7 @@ const SearchFilter = () => {
   return (
     <form onSubmit={handleSubmit}>
       <input 
-        className="field"
+        className="search-field"
         type="text" 
         value={term} 
         onChange={handleChange} 

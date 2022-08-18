@@ -48,7 +48,6 @@ body {
 .input-field {
   height: 40px;
   width: 300px;
-  font-family: "Kumbh Sans";
 }
 
 .submit-button {
@@ -60,5 +59,11 @@ body {
   color: #fff;
   border: 0;
   font-weight: 600;
+}
+
+.login-link,
+.sign-up-link,
+.input-field,
+.submit-button {
   font-family: "Kumbh Sans";
 }

@@ -15,7 +15,7 @@ const StyledHeader = styled.div`
     display: flex;
     height: 100%;
     align-items: center;
-    .field {
+    .search-field {
       width: 60%;
       height: 35%;
     }

@@ -19,26 +19,28 @@ const SignUp = () => {
     
     onSubmit: values => {
       dispatch(PostUser(values))
-      navigate('/login')
+      setTimeout(() => {
+        navigate('/login')
+      }, 1000)
     },
   });
   return (
     <div className="registration-wrapper">
       <form onSubmit={handleSubmit}>
         <div className="field">
-          <input className="input-field" name="user[email]" onChange={handleChange} type="email" placeholder="email" />
+          <input className="input-field" name="user[email]" onChange={handleChange} type="email" placeholder="Email" />
         </div>
         <div className="field">
-          <input className="input-field" name="user[username]" onChange={handleChange} type="text" placeholder="username"/>
+          <input className="input-field" name="user[username]" onChange={handleChange} type="text" placeholder="Username"/>
         </div>
         <div className="field">
-          <input className="input-field" name="user[password]" onChange={handleChange} type="password" placeholder="password" />
+          <input className="input-field" name="user[password]" onChange={handleChange} type="password" placeholder="Password" />
         </div>
         <div className="field">
-          <input className="input-field" name="user[password_confirmation]" onChange={handleChange} type="password" placeholder="password confirmation" />
+          <input className="input-field" name="user[password_confirmation]" onChange={handleChange} type="password" placeholder="Password confirmation" />
         </div>
         <input type="submit" className="submit-button"/>
-        <div><Link to="/">Login</Link></div>
+        <div><Link to="/" className="login-link">Login</Link></div>
       </form>
     </div>
 
