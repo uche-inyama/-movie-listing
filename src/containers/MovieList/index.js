@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Navigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import Slider from "react-slick";
@@ -11,13 +10,13 @@ import {settings} from '../../settings';
 
 const MovieList = () => {
   const token = localStorage.getItem('token')
-  const isauthenticated = useSelector(state => state.sessionsData.isAuthenticated)
   const dispatch = useDispatch();
   const movieText = 'Harry';
 
   useEffect(() => {
     dispatch(getMovies(movieText));
-  },[token]);
+    dispatch(getMovies(movieText));
+  },[dispatch,token]);
 
   const movies = useSelector((state) => state.movies);
   const { movies: { data: moviesData } } = movies;
@@ -29,10 +28,6 @@ const MovieList = () => {
   if (moviesData.Response === 'False') {
     return <div style={{ color: '#fff'}}>{moviesData.Error}</div>;
   } 
-
-  // if (!isauthenticated || !token) {
-  //   return <Navigate to="/login" />
-  // }
 
   if (!token) {
     return <Navigate to="/login" />

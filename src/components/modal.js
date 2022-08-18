@@ -14,8 +14,6 @@ const Modal = () => {
   const token = localStorage.getItem('token')
   const navigate  = useNavigate()
 
-  console.log(isAuthenticated)
-  
   const handleLogout = () => {
     dispatch(userLogOut())
     setTimeout(() => {
@@ -24,13 +22,9 @@ const Modal = () => {
     }, 500)
   }
 
-  const handleLogin = () => {
-    navigate('/')
-  }
-
   return (
     <div className="modal-wrapper">
-      {(token || isAuthenticated) && <img onClick={() => setModalIsOpen(true)} className="avatar" src={avatar} />}
+      {(token || isAuthenticated) && <img onClick={() => setModalIsOpen(true)} className="avatar" src={avatar} alt="avatar-img"/>}
       <ReactModal 
           onRequestClose={() => setModalIsOpen(false)} 
           style={{
