@@ -21,7 +21,7 @@ const Modal = () => {
     setTimeout(() => {
       navigate('/')
       window.location.reload();
-    }, 200)
+    }, 500)
   }
 
   const handleLogin = () => {
