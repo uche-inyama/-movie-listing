@@ -26,7 +26,7 @@ const SearchFilter = () => {
         type="text" 
         value={term} 
         onChange={handleChange} 
-        placeholder="Search Movies or Shows"
+        placeholder="Search"
       />
       <button type="submit"><i className="fa fa-search"></i></button>
     </form>

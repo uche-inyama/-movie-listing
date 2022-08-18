@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router';
 import { getMovieDetail, removeSelectedDetail } from '../../redux/movieDetailSlice';
 import StyledDetail from './styledDetail';
 
 const MovieDetail = () => {
   const { imdbID } = useParams();
   const dispatch = useDispatch();
+  const token = localStorage.getItem('token');
+  const isauthenticated = useSelector(state => state.sessionsData.isAuthenticated)
 
   useEffect(() => { dispatch(getMovieDetail(imdbID))
     return () => {
@@ -16,7 +19,11 @@ const MovieDetail = () => {
 
   const movieDetail = useSelector(state => state.movieDetail);
   const { movie } = movieDetail
- 
+
+  if(!isauthenticated || !token) {
+    return <Navigate to="/login" />
+  }
+
   return (
     <StyledDetail>
       <div className="movie-section">

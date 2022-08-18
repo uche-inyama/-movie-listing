@@ -10,6 +10,9 @@ const StyledFooter = styled.div`
     align-items: center;
     color: #fff;
     flex-direction: column;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
   }
 `
 

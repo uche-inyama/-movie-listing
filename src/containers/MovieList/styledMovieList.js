@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledList = styled.div`
   .movie-list, .show-list {
-    margin: 20px 0px
+    margin: 10px 0px
   }
   .header {
     color: #fff;
@@ -15,11 +15,11 @@ const StyledList = styled.div`
   }
 
   .slick-prev {
-    left: 10px;
+    left: -20px;
   }
 
   .slick-next {
-    right: 10px;
+    right: -20px;
   }
 `
 
