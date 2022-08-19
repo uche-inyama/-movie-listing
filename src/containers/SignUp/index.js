@@ -20,7 +20,7 @@ const SignUp = () => {
     onSubmit: values => {
       dispatch(PostUser(values))
       setTimeout(() => {
-        navigate('/login')
+        navigate('/')
       }, 1000)
     },
   });
