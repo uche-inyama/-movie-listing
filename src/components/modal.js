@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import avatar from '../images/profile.png';
 import { userLogOut } from '../redux/sessionsSlice';
+import { removeModal } from '../helpers'
 
 
 ReactModal.setAppElement('#root')
@@ -16,16 +17,16 @@ const Modal = () => {
 
   const handleLogout = () => {
     dispatch(userLogOut())
+    removeModal()
     setTimeout(() => {
       navigate('/')
-      window.location.reload();
-    }, 500)
+    }, 2000)
   }
 
   return (
     <div className="modal-wrapper">
       {(token || isAuthenticated) && <img onClick={() => setModalIsOpen(true)} className="avatar" src={avatar} alt="avatar-img"/>}
-      <ReactModal 
+      <ReactModal
           onRequestClose={() => setModalIsOpen(false)} 
           style={{
               overlay: {
@@ -48,7 +49,7 @@ const Modal = () => {
             }}
           isOpen={modalIsOpen}>
         <div className="ff-Kumbh modal-container">
-          {token && (<div className="logout" onClick={() => handleLogout()}>logout</div>)}
+          {(<div className="logout" onClick={() => handleLogout()}>logout</div>)}
         </div>
       </ReactModal>
     </div>

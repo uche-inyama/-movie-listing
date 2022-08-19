@@ -29,8 +29,8 @@ const SessionsSlice = createSlice({
       state.status = 'loading'
     },
     [userLogOut.fulfilled]: (state, action) => {
-      console.log('logging out...')
       localStorage.removeItem('token')
+      state.isAuthenticated = false
       state.status = 'success'
     },
     [userLogOut.rejected]: (state, action) => {

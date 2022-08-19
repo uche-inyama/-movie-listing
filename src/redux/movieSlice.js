@@ -15,11 +15,11 @@ const moviesSlice = createSlice({
     [getMovies.pending]: (state, action) => {
       state.status = 'loading'
     },
-    [getMovies.fulfilled]: (state, { payload }) => {
-      state.movies = payload
+    [getMovies.fulfilled]: (state, action) => {
+      state.movies = action.payload
       state.status = 'success'
     },
-    [getMovies.rejected]: (state, {payload}) => {
+    [getMovies.rejected]: (state, action) => {
       state.status = 'failed'
     }
   }

@@ -20,7 +20,7 @@ const SearchFilter = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="search-form">
       <input 
         className="search-field"
         type="text" 

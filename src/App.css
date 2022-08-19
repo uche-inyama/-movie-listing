@@ -28,7 +28,6 @@ body {
   height: clamp(2rem, 10vw, 3rem)  !important;
   right: 0% !important;
   top: 0% !important;
-  cursor: pointer;
 }
 
 .avatar {
@@ -66,4 +65,8 @@ body {
 .input-field,
 .submit-button {
   font-family: "Kumbh Sans";
+}
+
+.logout {
+  cursor: pointer;
 }

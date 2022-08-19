@@ -10,6 +10,7 @@ const StyledList = styled.div`
     font-weight: 400;
     padding: 10px;
   }
+  
   .list {
     padding-left: 0;
   }
@@ -20,6 +21,12 @@ const StyledList = styled.div`
 
   .slick-next {
     right: -20px;
+  }
+
+  .loading {
+    display: grid;
+    place-items: center;
+    color: #fff;
   }
 `
 

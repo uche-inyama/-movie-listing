@@ -15,14 +15,13 @@ const MovieList = () => {
 
   useEffect(() => {
     dispatch(getMovies(movieText));
-    dispatch(getMovies(movieText));
   },[dispatch,token]);
 
   const movies = useSelector((state) => state.movies);
   const { movies: { data: moviesData } } = movies;
 
   if (movies.status === null || movies.status === 'loading') {
-    return <div>loading...</div>;
+    return <div className="loading" style={{color: "#fff", display: 'grid', placeItems: 'center'}}>loading...</div>;
   }
 
   if (moviesData.Response === 'False') {
@@ -30,7 +29,7 @@ const MovieList = () => {
   } 
 
   if (!token) {
-    return <Navigate to="/login" />
+    return <Navigate to="/" />
   }
 
   return (
